@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactUsActivity"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:gravity="center"
+        android:text="OUR TEAM"
+        android:textColor="@color/white"
+        android:textSize="40sp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/download"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:text="Akhil Bora"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:text="Canteen"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="+91-9435433229"
+        android:textColor="@color/white"
+        />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/download" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:text="Jatin Das" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:text="Juice Center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="+91-8399891565"
+        android:textColor="@color/white"
+        />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:src="@drawable/dj"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:text="DeepNath Jyoti"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:text="Stationery"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="+91-8724856610"
+        android:textColor="@color/white"
+        />
+
+</LinearLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="Welcome to Umiam Store"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/imgLogin"
+        android:layout_width="201dp"
+        android:layout_height="195dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/pp">
+
+    </ImageView>
+
+    <EditText
+        android:id="@+id/activity_main_edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:drawableRight="@drawable/email"
+        android:ems="8"
+        android:hint="Please enter an Email Address"
+        android:inputType="textEmailAddress"
+        android:textColor="#fff"
+        android:textColorHint="#686262">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/activity_main_edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/lock"
+        android:ems="8"
+        android:hint="Please enter the password"
+        android:inputType="textPassword"
+        android:textColor="#fff"
+        android:textColorHint="#605B5B">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/activity_main_btnLogin"
+        android:layout_width="154dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:text="LOGIN"
+        app:backgroundTint="#FFFFFF"
+        android:textSize="20sp">
+
+    </Button>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="260dp"
+            android:layout_height="72dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="New to Umiam Store! "
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/activity_main_btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="monospace"
+            android:text="Sign Up"
+            android:gravity="end"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="italic"
+            app:backgroundTint="#FFFFFF">
+
+        </TextView>
+
+    </LinearLayout>
+
+
+</LinearLayout>

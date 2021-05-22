@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/continueShoppingItem"
+        android:title="Continue Shopping"
+        android:icon="@drawable/cs"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/verifyOrderItem"
+          android:title="Verify"
+          android:icon="@drawable/verify"
+          app:showAsAction="always"/>
+
+    <item android:id="@+id/declineOrderItem"
+          android:title="Decline"
+          android:icon="@drawable/decline"
+          app:showAsAction="always"/>
+
+
+
+</menu>

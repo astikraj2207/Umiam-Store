@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:measureWithLargestChild="false"
+    android:orientation="vertical"
+    tools:context=".SignUpLayout">
+
+    <ImageView
+        android:id="@+id/imgLogin"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/wel">
+
+    </ImageView>
+
+    <EditText
+        android:id="@+id/sign_up_layout_edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:drawableRight="@drawable/email"
+        android:ems="10"
+        android:hint="Please enter an Email Address"
+        android:inputType="textPersonName|textEmailAddress"
+        android:textColor="@color/white"
+        android:textColorHint="#FF5E5E58" />
+
+    <EditText
+        android:id="@+id/sign_up_layout_edtUsername"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:drawableRight="@drawable/name"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:hint="Please enter your Name"
+        android:inputType="textPersonName|text"
+        android:textColorHint="#FF5E5E58" />
+
+    <EditText
+        android:id="@+id/sign_up_layout_edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:drawableRight="@drawable/lock"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:hint="Please enter the Password"
+        android:inputType="textPersonName|textPassword"
+        android:textColorHint="#FF5E5E58" />
+
+    <EditText
+        android:id="@+id/sign_up_layout_edtConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:drawableRight="@drawable/confirm"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:hint="Please confirm the Password"
+        android:inputType="textPersonName|textPassword"
+        android:textColorHint="#FF5E5E58" />
+
+    <EditText
+        android:id="@+id/sign_up_layout_edtRoomNo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:drawableRight="@drawable/room"
+        android:textColor="@color/white"
+        android:ems="10"
+        android:hint="Please enter your Room No."
+        android:inputType="textPostalAddress"
+        android:textColorHint="#FF5E5E58" />
+
+    <EditText
+        android:id="@+id/sign_up_layout_edtPhoneNo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:drawableRight="@drawable/phone"
+        android:textColor="@color/white"
+        android:ems="10"
+        android:hint="Please enter your Phone No."
+        android:inputType="phone"
+        android:textColorHint="#FF5E5E58" />
+
+    <Button
+        android:id="@+id/sign_up_layout_btnSignUp"
+        android:layout_width="154dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:text="SIGNUP"
+        app:backgroundTint="#FFFFFF"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/textViewSignUP"
+            android:layout_width="260dp"
+            android:layout_height="72dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Already a user! "
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/sign_up_layout_btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:fontFamily="monospace"
+            android:text="Login"
+            android:gravity="end"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="italic"
+            app:backgroundTint="#FFFFFF">
+
+        </TextView>
+
+    </LinearLayout>
+
+
+</LinearLayout>
