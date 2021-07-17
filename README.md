@@ -57,16 +57,20 @@ In the backend, the given information is used to open a url through which the co
 [(Back to top)](#table-of-contents)
 
 # Login
-[(Back to top)](#table-of-contents)
+
 
 The information entered is validated with data in app_users_table, if it is correct the user is directed to landing page. Otherwise an alert dialogue message is shown.
 
-# Landing-Page for Users
 [(Back to top)](#table-of-contents)
+
+# Landing-Page for Users
+
 
 This Page shows the available shops for purchasing items i.e canteen, juice center and Stationary Shop.
 
 The file fetch_brands.php fetches the required rows from products table in the database and displays it in the form of JSon objects array on a link. Android Stuido fetches the JSon object from the same link and displays it in the form of list view. 
+
+[(Back to top)](#table-of-contents)
 
 # Order Items
 
