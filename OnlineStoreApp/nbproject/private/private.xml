@@ -5,11 +5,15 @@
         <group>
             <file>file:/D:/Xampp/htdocs/OnlineStoreApp/verify_order.php</file>
             <file>file:/D:/Xampp/htdocs/OnlineStoreApp/fetch_products.php</file>
+            <file>file:/D:/Xampp/htdocs/OnlineStoreApp/insert_paid_items.php</file>
+            <file>file:/D:/Xampp/htdocs/OnlineStoreApp/fetch_people.php</file>
             <file>file:/D:/Xampp/htdocs/OnlineStoreApp/decline_one_order.php</file>
+            <file>file:/D:/Xampp/htdocs/OnlineStoreApp/fetch_paid_order.php</file>
             <file>file:/D:/Xampp/htdocs/OnlineStoreApp/login_app_user.php</file>
             <file>file:/D:/Xampp/htdocs/OnlineStoreApp/calculate_total_price.php</file>
             <file>file:/D:/Xampp/htdocs/OnlineStoreApp/join_new_user.php</file>
             <file>file:/D:/Xampp/htdocs/OnlineStoreApp/delete_paid_items.php</file>
+            <file>file:/D:/Xampp/htdocs/OnlineStoreApp/get_room.php</file>
             <file>file:/D:/Xampp/htdocs/OnlineStoreApp/insert_temporary_order.php</file>
             <file>file:/D:/Xampp/htdocs/OnlineStoreApp/fetch_temporary_order.php</file>
             <file>file:/D:/Xampp/htdocs/OnlineStoreApp/fetch_subbrands.php</file>
