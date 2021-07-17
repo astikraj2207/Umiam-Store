@@ -16,14 +16,15 @@ import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_fetch_products.*
 
 class FetchProductsActivity : AppCompatActivity() {
+    var selectedBrand = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fetch_products)
 
-        val selectedBrand = intent.getStringExtra("BRAND")
+         selectedBrand = intent.getStringExtra("BRAND").toString()
 
         var productsList = ArrayList<Product>()
-        val productsURL = "http://192.168.1.38/OnlineStoreApp/fetch_products.php?brand=$selectedBrand"
+        val productsURL = IP.ip+"OnlineStoreApp/fetch_products.php?brand=$selectedBrand"
         val requestQ = Volley.newRequestQueue(this@FetchProductsActivity)
         val jsonAR = JsonArrayRequest(Request.Method.GET, productsURL, null, Response.Listener {
             response ->
@@ -57,6 +58,7 @@ class FetchProductsActivity : AppCompatActivity() {
         if (menuItem.itemId == R.id.goToCart) {
 
             var intent = Intent(this, CartProductsActivity::class.java)
+            intent.putExtra("BRAND", selectedBrand)
             startActivity(intent)
         }
 

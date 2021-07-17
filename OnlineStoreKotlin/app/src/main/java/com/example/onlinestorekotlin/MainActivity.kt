@@ -3,6 +3,7 @@ package com.example.onlinestorekotlin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.android.volley.Request
@@ -17,17 +18,35 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         activity_main_btnLogin.setOnClickListener {
-            val loginURL = "http://192.168.1.38/OnlineStoreApp/login_app_user.php?email="+
+            val loginURL = IP.ip+"OnlineStoreApp/login_app_user.php?email="+
                     activity_main_edtEmail.text.toString() + "&pass=" + activity_main_edtPassword.text.toString()
             val requestQ = Volley.newRequestQueue(this@MainActivity)
             val stringRequest = StringRequest(Request.Method.GET, loginURL, Response.Listener { 
                 response ->
                 if(response.equals("The user does exist")){
                     Person.email = activity_main_edtEmail.text.toString()
+
+                    val roomURL = IP.ip+"OnlineStoreApp/get_room.php?email="+activity_main_edtEmail.text.toString()
+                    val requestRoom = Volley.newRequestQueue(this@MainActivity)
+                    val stringRoom = StringRequest(Request.Method.GET, roomURL, Response.Listener {
+                        response ->
+                        Person.room = response
+                    }, Response.ErrorListener {
+                        error ->
+                        val dialogBuilder= AlertDialog.Builder(this)
+                        dialogBuilder.setTitle("Message")
+                        dialogBuilder.setMessage(error.message)
+                        dialogBuilder.create().show()
+                    })
+
+                    requestRoom.add(stringRoom)
+                    var rm = Person.room
+                    Log.d("roomTag", rm.toString())
+
                     Toast.makeText(this@MainActivity, response, Toast.LENGTH_SHORT).show()
 
 
-                    if(Person.email=="akhil"){
+                    if(Person.email=="admin@gmail.com"){
                         val intent = Intent(this@MainActivity, PeopleOrders::class.java)
                         startActivity(intent)
                     }else {

@@ -21,7 +21,7 @@ class SignUpLayout : AppCompatActivity() {
         sign_up_layout_btnSignUp.setOnClickListener {
             if(sign_up_layout_edtPassword.text.toString().equals(sign_up_layout_edtConfirmPassword.text.toString())){
 
-                val signUpURL = "http://192.168.1.38/OnlineStoreApp/join_new_user.php?email="+
+                val signUpURL = IP.ip+"OnlineStoreApp/join_new_user.php?email="+
                         sign_up_layout_edtEmail.text.toString()+"&username="+
                         sign_up_layout_edtUsername.text.toString()+"&pass="+
                         sign_up_layout_edtPassword.text.toString()+"&room="+
@@ -48,10 +48,10 @@ class SignUpLayout : AppCompatActivity() {
 
                 }, Response.ErrorListener {
                     error ->
-//                    val dialogBuilder= AlertDialog.Builder(this)
-//                    dialogBuilder.setTitle("Message")
-//                    dialogBuilder.setMessage(error.message)
-//                    dialogBuilder.create().show()
+                    val dialogBuilder= AlertDialog.Builder(this)
+                    dialogBuilder.setTitle("Message")
+                    dialogBuilder.setMessage(error.message)
+                    dialogBuilder.create().show()
                 })
                 requestQ.add(stringRequest)
             }

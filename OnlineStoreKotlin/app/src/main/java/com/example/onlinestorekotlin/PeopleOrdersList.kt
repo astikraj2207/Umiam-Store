@@ -21,7 +21,7 @@ class PeopleOrdersList : AppCompatActivity() {
         setContentView(R.layout.activity_people_orders_list)
 
          selectedRoom = intent.getStringExtra("ROOM").toString()
-        var peopleOrdersURL = "http://192.168.1.38/OnlineStoreApp/fetch_paid_items.php?room=${selectedRoom}"
+        var peopleOrdersURL = IP.ip+"OnlineStoreApp/fetch_paid_items.php?room=${selectedRoom}"
         var peopleProductsList = ArrayList<TemporaryProduct>()
         var requestQ = Volley.newRequestQueue(this@PeopleOrdersList)
         var jsonAR = JsonArrayRequest(Request.Method.GET, peopleOrdersURL, null, Response.Listener {
@@ -59,7 +59,7 @@ class PeopleOrdersList : AppCompatActivity() {
        if (menuItem.itemId == R.id.declineAllOrders) {
 //           var intent = Intent(this, PeopleOrders::class.java)
 //           startActivity(intent)
-            var deleteUrl = "http://192.168.1.38//OnlineStoreApp/delete_paid_items.php?room=${selectedRoom}"
+            var deleteUrl = IP.ip+"OnlineStoreApp/delete_paid_items.php?room=${selectedRoom}"
             var requestQ = Volley.newRequestQueue(this@PeopleOrdersList)
             var stringRequest = StringRequest(Request.Method.GET, deleteUrl, Response.Listener{
                 response ->

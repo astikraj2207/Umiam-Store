@@ -20,7 +20,7 @@ class HomeScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
 
-        var brandsURL = "http://192.168.1.38/OnlineStoreApp/fetch_brands.php"
+        var brandsURL = IP.ip+"OnlineStoreApp/fetch_brands.php"
         var brandsList = ArrayList<String>()
         var requestQ = Volley.newRequestQueue(this@HomeScreen)
         var jsonAR = JsonArrayRequest(Request.Method.GET, brandsURL, null, Response.Listener {

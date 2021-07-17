@@ -37,7 +37,7 @@ class TemporaryProductAdapter(var context:Context, var arrayList: ArrayList<Temp
     fun deleteItem(index: Int, id: Int){
         arrayList.removeAt(index)
         notifyDataSetChanged()
-        val deleteURL = "http://192.168.1.38/OnlineStoreApp/decline_one_order.php?email=${Person.email}&product_id=${id.toString()}"
+        val deleteURL = IP.ip+"OnlineStoreApp/decline_one_order.php?email=${Person.email}&product_id=${id.toString()}"
         var requestQ = Volley.newRequestQueue(context)
         var stringRequest = StringRequest(Request.Method.GET, deleteURL, Response.Listener {
             response ->
@@ -58,7 +58,7 @@ class TemporaryProductAdapter(var context:Context, var arrayList: ArrayList<Temp
             itemView.txtTempName.text = name
             itemView.txtTempPrice.text = price.toString()
             itemView.txtTempAmount.text = amount.toString()
-            var picURL = "http://192.168.1.38/OnlineStoreApp/osimages/"
+            var picURL = IP.ip+"OnlineStoreApp/osimages/"
             picURL = picURL.replace(" ","%20")
             Picasso.get().load(picURL+picName).into(itemView.imgTemporaryProduct)
             itemView.btnDeleteOrder.setOnClickListener {

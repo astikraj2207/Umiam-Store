@@ -29,11 +29,19 @@ class AmountFragment : DialogFragment() {
         var btnAddToCart = fragmentView.findViewById<ImageButton>(R.id.btnAddToCart)
 
         btnAddToCart.setOnClickListener {
-            var ptoURL = "http://192.168.1.38/OnlineStoreApp/insert_temporary_order.php?email=${Person.email}&product_id=${Person.addToCartProductID}&amount=${edtEnterAmount.text.toString()}"
+            var ptoURL = IP.ip+"OnlineStoreApp/insert_temporary_order.php?email=${Person.email}&product_id=${Person.addToCartProductID}&amount=${edtEnterAmount.text.toString()}"
             var requestQ = Volley.newRequestQueue(activity)
             var stringRequest = StringRequest(Request.Method.GET, ptoURL, Response.Listener {
                 response ->
-                var intent = Intent(activity, CartProductsActivity::class.java)
+                var intent = Intent(activity, HomeScreen::class.java)
+//                if(Person.addToCartProductID<=9)
+//                intent.putExtra("BRAND", "Canteen")
+//                else if(Person.addToCartProductID<=13)
+//                    intent.putExtra("BRAND", "Juice Center")
+//                else
+//                    intent.putExtra("BRAND", "Stationary")
+
+
                 startActivity(intent)
 
             }, Response.ErrorListener {

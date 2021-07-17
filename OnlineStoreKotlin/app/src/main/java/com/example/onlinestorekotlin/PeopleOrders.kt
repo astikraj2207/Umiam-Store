@@ -20,7 +20,7 @@ class PeopleOrders : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_people_orders)
 
-        var peopleURL = "http://192.168.1.38/OnlineStoreApp/fetch_people.php"
+        var peopleURL = IP.ip+"OnlineStoreApp/fetch_people.php"
         var peopleList = ArrayList<String>()
         var requestQ = Volley.newRequestQueue(this@PeopleOrders)
         var jsonAR = JsonArrayRequest(Request.Method.GET, peopleURL, null, Response.Listener {

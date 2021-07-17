@@ -2,17 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.onlinestorekotlin">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/pp"
+        android:label="Umiam Store"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineStoreKotlin"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ContactUsActivity"></activity>
+        <activity android:name=".ThankYou"></activity>
+        <activity android:name=".Payment_Activity" />
+        <activity android:name=".ContactUsActivity" />
         <activity android:name=".PeopleOrdersList" />
         <activity android:name=".PeopleOrders" />
         <activity android:name=".FinalizeShoppingActivity" />

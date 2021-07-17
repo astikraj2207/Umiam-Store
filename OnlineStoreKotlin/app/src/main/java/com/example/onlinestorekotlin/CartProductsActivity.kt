@@ -19,12 +19,17 @@ import kotlinx.android.synthetic.main.activity_cart_products.*
 import kotlinx.android.synthetic.main.activity_fetch_products.*
 
 class CartProductsActivity : AppCompatActivity() {
+    var B = ""
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart_products)
 
-        var cartProductsURL = "http://192.168.1.38/OnlineStoreApp/fetch_temporary_order.php?email=${Person.email}"
+        var theBrand = intent.getStringExtra("BRAND")
+        if (theBrand != null) {
+            B = theBrand
+        }
+        var cartProductsURL = IP.ip+"OnlineStoreApp/fetch_temporary_order.php?email=${Person.email}&brand=${theBrand}"
         var cartProductsList = ArrayList<TemporaryProduct>()
         var requestQ = Volley.newRequestQueue(this@CartProductsActivity)
         var jsonAR = JsonArrayRequest(Request.Method.GET, cartProductsURL, null, Response.Listener {
@@ -65,7 +70,7 @@ class CartProductsActivity : AppCompatActivity() {
 
         } else if (menuItem.itemId == R.id.declineOrderItem) {
 
-            var deleteUrl = "http://192.168.1.38//OnlineStoreApp/decline_order.php?email=${Person.email}"
+            var deleteUrl = IP.ip+"OnlineStoreApp/decline_order.php?email=${Person.email}"
             var requestQ = Volley.newRequestQueue(this@CartProductsActivity)
             var stringRequest = StringRequest(Request.Method.GET, deleteUrl, Response.Listener{
                 response ->
@@ -87,48 +92,12 @@ class CartProductsActivity : AppCompatActivity() {
         }else if(menuItem.itemId == R.id.verifyOrderItem){
 
             //println(cartProductsList.size)
-            //Log.d("myTag", "This is my message");
 
-            var cartProductsURL2 = "http://192.168.1.38/OnlineStoreApp/fetch_temporary_order.php?email=${Person.email}"
-
-            var requestQu = Volley.newRequestQueue(this@CartProductsActivity)
-            var jsonAR2 = JsonArrayRequest(Request.Method.GET, cartProductsURL2, null, Response.Listener {
-                response ->
-                for (productJOIndex in 0.until(response.length())){
-
-                    var URL = "http://192.168.1.38/OnlineStoreApp/insert_paid_items.php?email=${Person.email}" +
-                            "&room=${Person.room}" +
-                            "&product_id=${response.getJSONObject(productJOIndex).getInt("id")}" +
-                            "&amount=${response.getJSONObject(productJOIndex).getInt("amount")}" +
-                            "&brand=${response.getJSONObject(productJOIndex).getString("brand")}"
-
-                    val q = Volley.newRequestQueue(this@CartProductsActivity)
-                    val stringRequest = StringRequest(Request.Method.GET, URL, Response.Listener {
-                        response ->
-
-                    }, Response.ErrorListener { error ->
-                        val dialogBuilder= AlertDialog.Builder(this)
-                        dialogBuilder.setTitle("Message")
-                        dialogBuilder.setMessage(error.message)
-                        dialogBuilder.create().show()
-                    })
-                    q.add(stringRequest)
-                }
-
-            }, Response.ErrorListener {
-                error ->
-                val dialogBuilder= AlertDialog.Builder(this)
-                dialogBuilder.setTitle("Message")
-                dialogBuilder.setMessage(error.message)
-                dialogBuilder.create().show()
-            })
-            requestQu.add(jsonAR2)
+            Log.d("myTag", "This is my message1")
 
 
 
-
-
-            var verifyOrderURL = "http://192.168.1.38//OnlineStoreApp/verify_order.php?email=${Person.email}"
+            var verifyOrderURL = IP.ip+"OnlineStoreApp/verify_order.php?email=${Person.email}"
             var requestQ = Volley.newRequestQueue(this@CartProductsActivity)
             var stringRequest = StringRequest(Request.Method.GET, verifyOrderURL, Response.Listener {
                 response ->
@@ -137,8 +106,8 @@ class CartProductsActivity : AppCompatActivity() {
                 var intent = Intent(this, FinalizeShoppingActivity::class.java)
                 Toast.makeText(this, "Orders Verified", Toast.LENGTH_LONG).show()
                 intent.putExtra("LATEST_INVOICE_NUMBER", response)
+                intent.putExtra("BRAND", B)
                 startActivity(intent)
-
 
             }, Response.ErrorListener { error ->
                 val dialogBuilder= AlertDialog.Builder(this)
@@ -146,8 +115,6 @@ class CartProductsActivity : AppCompatActivity() {
                 dialogBuilder.setMessage(error.message)
                 dialogBuilder.create().show()
             })
-
-
 
             requestQ.add(stringRequest)
 

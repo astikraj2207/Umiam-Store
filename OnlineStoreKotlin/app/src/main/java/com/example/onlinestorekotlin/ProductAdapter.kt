@@ -33,7 +33,7 @@ class ProductAdapter(var context: Context, var arrayList: ArrayList<Product>): R
             itemView.txtName.text = name
             itemView.txtPrice.text = price.toString()
 
-            var picURL = "http://192.168.1.38/OnlineStoreApp/osimages/"
+            var picURL = IP.ip+"OnlineStoreApp/osimages/"
             picURL = picURL.replace(" ","%20")
             Picasso.get().load(picURL+picName).into(itemView.imgProduct)
 
@@ -42,10 +42,7 @@ class ProductAdapter(var context: Context, var arrayList: ArrayList<Product>): R
                 var amountFragment = AmountFragment()
                 var fragmentManager = (itemView.context as Activity).fragmentManager
                 amountFragment.show(fragmentManager, "TAG")
-
             }
-
         }
-
     }
 }
